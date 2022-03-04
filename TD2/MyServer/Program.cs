@@ -15,8 +15,8 @@ namespace MyServer
     {
         static void Main(string[] args)
         {
-            //Exo1(args);     // request link = "http://localhost:8080/ce_que_je_veux/MyMethod?param1=Benjamin&custom=Jean-Yves"
-            Exo2(args);     //link = "http://localhost:8080/ce_que_je_veux/?name=toto"
+            Exo1(args);     // request link = "http://localhost:8080/ce_que_je_veux/MyMethod?param1=Benjamin&custom=Jean-Yves"
+            //Exo2(args);     //link = "http://localhost:8080/ce_que_je_veux/?name=toto"
             //Exo3(args);     //link = "http://localhost:8080/ce_que_je_veux/?number=5"
             Console.ReadLine();
         }
