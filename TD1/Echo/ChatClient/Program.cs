@@ -29,7 +29,8 @@ namespace Echo
 
             while (true)
             {
-                string str = "response: ";
+                //string str = "response: ";
+                string str = "";
                 str = str + reader.ReadString();
                 Console.WriteLine(str);
             }
