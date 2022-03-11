@@ -7,6 +7,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Device.Location;
+using MyFirstRESTClient.CalculatorServiceReference;
 
 namespace MyFirstRESTClient // JCDecaux
 {
@@ -143,6 +144,21 @@ namespace MyFirstRESTClient // JCDecaux
             return nearestStation;
         }
 
+        public async void CalculateOnline(int a, int b)
+        {
+            Console.WriteLine("Nombres : " + a + " et " + b);
+            Console.WriteLine("Calcul...");
+            CalculatorSoapClient calculatorSoapClient = new CalculatorSoapClient();
+            int addition = await calculatorSoapClient.AddAsync(a, b);
+            int soustraction = await calculatorSoapClient.SubtractAsync(a, b);
+            int multiplication = await calculatorSoapClient.MultiplyAsync(a, b);
+            int division = await calculatorSoapClient.DivideAsync(a, b);
+            Console.WriteLine("Addition: " + addition);
+            Console.WriteLine("Soustraction: " + soustraction);
+            Console.WriteLine("Multiplication: " + multiplication);
+            Console.WriteLine("Division: " + division);
+        }
+
         static async Task Main()
         {
             RestClient rc = new RestClient();
@@ -155,6 +171,7 @@ namespace MyFirstRESTClient // JCDecaux
             GeoCoordinate geo = new GeoCoordinate(20.856582, 8.430988);
             Station s = await rc.GetNearestStation(contractName, geo);
             Console.WriteLine(s.name);
+            rc.CalculateOnline(50, 10);
             Console.WriteLine("End");
             Console.ReadLine();
         }
