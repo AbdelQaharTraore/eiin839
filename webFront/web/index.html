@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- The title of the page is written in the tab of the browser. -->
+    <title>My first Web Services UI client</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <label for="apiKey">API key:</label>
+    <input name="apiKeyInput" id="apiKey" />
+
+    <button id="retrieveContractsButton" onclick="retrieveAllContracts();">
+      Retrieve contracts
+    </button>
+    <br>
+
+    <label for="contract">Contract</label>
+    <input name="contractInput" id="contractName" list="dal_id" />
+    <datalist id="dal_id"> </datalist>
+
+    <button id="retrieveStationsButton" onclick="retrieveContractStations();">
+      Retrieve stations of c.
+    </button>
+    <br>
+
+    <label for="lat">Latitude</label>
+    <input name="lat" id="lat" />
+    <br>
+    <label for="lon">Longitude</label>
+    <input name="lon" id="lng" />
+
+    <button id="getClosestStation" onclick="getClosestStation();">
+      Get closest station
+    </button>
+    <br>
+    <h1 id="closestStation"></h1>
+  </body>
+  <script type="text/javascript" src="main.js"></script>
+</html>
